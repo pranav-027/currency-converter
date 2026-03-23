@@ -1,8 +1,8 @@
 const getCurrencyConversionRate = async (fromCurrency, toCurrency) => {
   let currencyAPIURl =
-    "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/" +
-    fromCurrency +
-    ".json";
+  "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/" +
+  fromCurrency +
+  ".json";
   try {
     let response = await fetch(currencyAPIURl);
     if (!response.ok) throw new Error("Network response was not ok");
@@ -26,6 +26,8 @@ const updateFlag = (element) => {
   let img = element.parentElement.querySelector("img");
   img.src = getFlagURL(element.value);
 };
+
+const exchangeRateElement = document.getElementById("exchange-rate");
 
 const convertCurrency = async () => {
   const amount = document.getElementById("input-amount").value;
@@ -65,7 +67,6 @@ for (let select of dropdowns) {
 
 const button = document.getElementById("convert");
 
-const exchangeRateElement = document.getElementById("exchange-rate");
 
 button.addEventListener("click", async (event) => {
   event.preventDefault();
