@@ -1,10 +1,10 @@
 const getCurrencyConversionRate = async (fromCurrency, toCurrency) => {
-  let currencyAPIURl =
+  let currencyAPIUrl =
     "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/" +
     fromCurrency +
     ".json";
   try {
-    let response = await fetch(currencyAPIURl);
+    let response = await fetch(currencyAPIUrl);
     if (!response.ok) throw new Error("Network response was not ok");
     let data = await response.json();
     return data[fromCurrency][toCurrency].toFixed(4);
